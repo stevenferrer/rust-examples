@@ -7,7 +7,7 @@ mod test {
 
     #[test]
     fn read_and_write() {
-        let mut f = File::open("./src/stdio/lorem.txt").unwrap();
+        let mut f = File::open("testdata/lorem.txt").unwrap();
         let mut buffer = [0; 10];
 
         // read up to 10 bytes
@@ -18,7 +18,7 @@ mod test {
 
     #[test]
     fn seek_and_bufread() {
-        let mut f = File::open("./src/stdio/lorem.txt").unwrap();
+        let mut f = File::open("testdata/lorem.txt").unwrap();
         let mut buffer = [0; 10];
 
         // skip to the last 10 bytes of the file
@@ -32,7 +32,7 @@ mod test {
 
     #[test]
     fn bufread() {
-        let f = File::open("./src/stdio/lorem.txt").unwrap();
+        let f = File::open("testdata/lorem.txt").unwrap();
         let mut reader = BufReader::new(f);
         let mut buffer = String::new();
 
