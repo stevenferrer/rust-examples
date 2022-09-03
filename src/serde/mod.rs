@@ -9,7 +9,9 @@ struct Move {
 #[cfg(test)]
 mod test {
     use super::*;
+    use rand::prelude::*;
     use std::fs::{File, OpenOptions};
+    use std::io::Write;
     use std::str;
 
     #[test]
@@ -38,5 +40,39 @@ mod test {
         let v1 = serde_json::to_vec(&a).unwrap();
         println!("{:}", str::from_utf8(&v1).unwrap());
         println!("{:}", ron::to_string(&a).unwrap())
+    }
+
+    #[test]
+    fn struct_bson() {
+        let (mut x, mut y): (i32, i32);
+
+        let mut f = OpenOptions::new()
+            .create(true)
+            .write(true)
+            .truncate(true)
+            .open("testdata/moves.bson")
+            .unwrap();
+
+        const LEN: i32 = 10;
+
+        println!("serializing...");
+        for _ in 1..=LEN {
+            (x, y) = (random(), random());
+
+            let m = Move { x, y };
+            println!("{:?}", m);
+
+            let v = bson::to_vec(&m).unwrap();
+
+            let _ = f.write(&v).unwrap();
+        }
+
+        println!("deserializing...");
+
+        let f2 = File::open("testdata/moves.bson").unwrap();
+        for _ in 1..=LEN {
+            let v2: Move = bson::from_reader(&f2).unwrap();
+            println!("{:?}", v2);
+        }
     }
 }
