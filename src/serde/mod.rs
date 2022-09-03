@@ -10,9 +10,10 @@ struct Move {
 mod test {
     use super::*;
     use std::fs::{File, OpenOptions};
+    use std::str;
 
     #[test]
-    fn structs_and_enums_to_json() {
+    fn struct_json() {
         let a = Move { x: 1, y: 1 };
         println!("{:?}", a);
 
@@ -28,5 +29,14 @@ mod test {
 
         let b: Move = serde_json::from_reader(f2).unwrap();
         println!("{:?}", b);
+    }
+
+    #[test]
+    fn struct_ron() {
+        let a = Move { x: 1, y: 1 };
+
+        let v1 = serde_json::to_vec(&a).unwrap();
+        println!("{:}", str::from_utf8(&v1).unwrap());
+        println!("{:}", ron::to_string(&a).unwrap())
     }
 }
