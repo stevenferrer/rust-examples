@@ -1,0 +1,8 @@
+[package]
+authors = ["Steven Ferrer <steven.r.ferrer@gmail.com>"]
+description = "Rust examples"
+edition = "2021"
+name = "rust-examples"
+version = "0.1.0"
+
+[dependencies]
