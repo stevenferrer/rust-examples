@@ -5,6 +5,16 @@ edition = "2021"
 name = "rust-examples"
 version = "0.1.0"
 
+[[bin]]
+doctest = false
+name = "hello_world"
+test = false
+
+[[bin]]
+doctest = false
+name = "guessing_game"
+test = false
+
 [dependencies]
 bson = "2.4.0"
 rand = "0.8.5"
