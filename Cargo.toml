@@ -20,6 +20,11 @@ doctest = false
 name = "variables"
 test = false
 
+[[bin]]
+doctest = false
+name = "slices"
+test = false
+
 [dependencies]
 bson = "2.4.0"
 rand = "0.8.5"
