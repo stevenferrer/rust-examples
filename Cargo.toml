@@ -55,6 +55,11 @@ doctest = false
 name = "errors"
 test = false
 
+[[bin]]
+doctest = false
+name = "generics"
+test = false
+
 [dependencies]
 bson = "2.4.0"
 rand = "0.8.5"
