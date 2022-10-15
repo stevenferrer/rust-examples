@@ -5,6 +5,12 @@ edition = "2021"
 name = "rust-examples"
 version = "0.1.0"
 
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
+
 [[bin]]
 doctest = false
 name = "hello_world"
