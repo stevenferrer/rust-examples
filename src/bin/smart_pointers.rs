@@ -1,6 +1,8 @@
 use std::mem::drop;
 use std::ops::Deref;
 
+use rust_examples::list_v4;
+
 struct MyBox<T>(T);
 
 impl<T> MyBox<T> {
@@ -32,27 +34,29 @@ impl Drop for CustomSmartPointer {
 }
 
 fn main() {
-    let x = 5;
-    let y = MyBox::new(x);
+    // let x = 5;
+    // let y = MyBox::new(x);
 
-    assert_eq!(5, x);
-    assert_eq!(5, *y);
+    // assert_eq!(5, x);
+    // assert_eq!(5, *y);
 
-    let m = MyBox::new(String::from("Rust"));
-    hello(&m);
+    // let m = MyBox::new(String::from("Rust"));
+    // hello(&m);
 
-    let c = CustomSmartPointer {
-        data: String::from("my stuff"),
-    };
-    let d = CustomSmartPointer {
-        data: String::from("other stuff"),
-    };
-    println!("CustomSmartPointers created.");
+    // let c = CustomSmartPointer {
+    //     data: String::from("my stuff"),
+    // };
+    // let d = CustomSmartPointer {
+    //     data: String::from("other stuff"),
+    // };
+    // println!("CustomSmartPointers created.");
 
-    let d = CustomSmartPointer {
-        data: String::from("some data"),
-    };
-    println!("CustomSmartPointer created.");
-    drop(d);
-    println!("CustomSmartPointer dropped before the end of main.");
+    // let d = CustomSmartPointer {
+    //     data: String::from("some data"),
+    // };
+    // println!("CustomSmartPointer created.");
+    // drop(d);
+    // println!("CustomSmartPointer dropped before the end of main.");
+
+    list_v4::example();
 }
