@@ -106,6 +106,11 @@ doctest = false
 name = "mpsc"
 test = false
 
+[[bin]]
+doctest = false
+name = "mutex"
+test = false
+
 [dependencies]
 bson = "2.4.0"
 rand = "0.8.5"
