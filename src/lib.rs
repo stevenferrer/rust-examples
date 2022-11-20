@@ -14,3 +14,5 @@ pub mod list_v4;
 pub mod node;
 
 pub mod gui;
+
+pub mod blog;
