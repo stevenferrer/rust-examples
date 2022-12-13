@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 use std::fmt::Display;
 
 struct ImportantExcerpt<'a> {

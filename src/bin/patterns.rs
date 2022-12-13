@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 fn main() {
     basic_patterns();
 

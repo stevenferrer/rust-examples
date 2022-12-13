@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 fn main() {
     let my_string = String::from("hello world");
 

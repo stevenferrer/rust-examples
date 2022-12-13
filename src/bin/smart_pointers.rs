@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 use std::mem::drop;
 use std::ops::Deref;
 

@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 use std::mem::Discriminant;
 
 enum Message {

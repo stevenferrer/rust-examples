@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 use std::thread;
 
 #[derive(Debug, PartialEq, Copy, Clone)]

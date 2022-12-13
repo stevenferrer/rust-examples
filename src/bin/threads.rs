@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 use std::thread;
 use std::time::Duration;
 

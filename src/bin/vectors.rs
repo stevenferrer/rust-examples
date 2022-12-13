@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 use std::vec;
 
 fn main() {

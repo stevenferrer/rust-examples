@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 use std::fs::File;
 use std::io::{self, ErrorKind, Read};
 

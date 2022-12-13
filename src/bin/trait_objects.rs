@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 use rust_examples::gui::{Button, Draw, Screen};
 
 struct SelectBox {

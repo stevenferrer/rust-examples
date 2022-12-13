@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 fn main() {
     let data = "lorem ipsum dolor";
     let s = data.to_string();

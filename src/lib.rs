@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 mod collections;
 mod limit_tracker;
 mod serde;

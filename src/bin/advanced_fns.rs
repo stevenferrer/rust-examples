@@ -1,3 +1,5 @@
+#![allow(warnings)]
+
 use rust_examples::advanced::fns::{add_one, do_twice, Status};
 
 fn main() {
