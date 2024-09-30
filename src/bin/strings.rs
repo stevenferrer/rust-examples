@@ -1,5 +1,13 @@
 #![allow(warnings)]
 
+use std::rc::Rc;
+
+#[derive(Debug)]
+enum MyError {
+    IoError,
+    ParseError(&'static str),
+}
+
 fn main() {
     let data = "lorem ipsum dolor";
     let s = data.to_string();
@@ -42,4 +50,23 @@ fn main() {
     for c in hello.chars() {
         println!("c is {}", c);
     }
+
+    // Boxing a str
+    let my_string = String::from("lorem ipsum dolor");
+    // convert String to an owned str, using box
+    // good for dropping additional capacity metadata
+    let my_boxed_str = my_string.into_boxed_str();
+    println!("My boxed str: {}", my_boxed_str);
+
+    // Using Rc with str to enable shared, immutable str slice
+    let some_large_text: &'static str = "This is a large text";
+    let subsection: Rc<str> = Rc::from(&some_large_text[1..3]);
+
+    let another_reference = Rc::clone(&subsection);
+    let yet_another_ref = Rc::clone(&subsection);
+}
+
+// from binary to string
+fn latin1_to_string(latin1_data: &[u8]) -> String {
+    latin1_data.iter().map(|&c| c as char).collect()
 }

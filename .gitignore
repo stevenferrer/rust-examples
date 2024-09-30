@@ -2,3 +2,5 @@
 /Cargo.lock
 
 hello.txt
+
+.DS_Store

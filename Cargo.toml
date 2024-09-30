@@ -11,6 +11,13 @@ opt-level = 0
 [profile.release]
 opt-level = 3
 
+[dependencies]
+bson = "2.4.0"
+rand = "0.8.5"
+ron = "0.8.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
 [[bin]]
 doctest = false
 name = "hello_world"
@@ -151,9 +158,7 @@ doctest = false
 name = "web_server"
 test = false
 
-[dependencies]
-bson = "2.4.0"
-rand = "0.8.5"
-ron = "0.8.0"
-serde = {version = "1.0", features = ["derive"]}
-serde_json = "1.0"
+[[bin]]
+doctest = false
+name = "seek"
+test = false
