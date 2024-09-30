@@ -162,3 +162,8 @@ test = false
 doctest = false
 name = "seek"
 test = false
+
+[[bin]]
+doctest = false
+name = "dispatch"
+test = false
